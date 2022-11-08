@@ -29,6 +29,7 @@ public class GetRequest06 extends Authentication {
                 "accounts[1].accountType",equalTo("CREDIT_CARD"));
 
 
+
         //JsonPath ile müsteri bilgilerini dogrulayiniz
         JsonPath json = response.jsonPath();
         assertEquals("Della",json.getString("firstName"));

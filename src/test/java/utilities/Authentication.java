@@ -11,16 +11,17 @@ import java.util.Map;
 import static io.restassured.RestAssured.given;
 
 public class Authentication {
-/*
-    public static void main(String[] args) {
-       String guncelToken = generateToken();
-        System.out.println(guncelToken);
-    }
-*/
-   public static String generateToken(){
 
-       String username = "Batch81";
-       String password = "Batch81+";
+    /*
+        public static void main(String[] args) {
+            String guncelToken = generateToken();
+            System.out.println(guncelToken);
+        }
+    */
+    public static String generateToken(){
+
+        String username = "Batch81";
+        String password = "Batch81+";
         /*
         {
             "password": "string",
@@ -37,12 +38,12 @@ public class Authentication {
         //    "rememberMe": true,
         //    "username": "Batch81"
 
-
         String endPoint = "https://www.gmibank.com/api/authenticate";
 
         Response response = given().contentType(ContentType.JSON).body(postBody).when().post(endPoint);
 
         JsonPath token = response.jsonPath();
         return token.getString("id_token");
+        //getString("id_token") -> Token verir
     }
 }
